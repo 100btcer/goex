@@ -224,6 +224,7 @@ func (ws *WsConn) reconnect() {
 
 		for _, sub := range ws.subs {
 			Log.Info("[ws] re subscribe: ", string(sub))
+			time.Sleep(2 * time.Second)
 			ws.SendMessage(sub)
 		}
 	}
